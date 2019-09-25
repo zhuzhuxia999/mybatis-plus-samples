@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.samples.reduce.springmvc.entity.City;
-import com.baomidou.mybatisplus.samples.reduce.springmvc.entity.District;
-import com.baomidou.mybatisplus.samples.reduce.springmvc.utils.SpringContext;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +16,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.samples.reduce.springmvc.entity.User;
 import com.baomidou.mybatisplus.samples.reduce.springmvc.mapper.UserMapper;
 
+import javax.annotation.Resource;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:spring.xml"})
 public class SampleTest {
@@ -25,7 +25,8 @@ public class SampleTest {
     @Autowired
     ApplicationContext context;
 
-    @Autowired
+    //@Resource是jdk提供的，@Autowired是Spring的，推荐使用@Resource
+    @Resource
     private UserMapper userMapper;
 
     @Test
