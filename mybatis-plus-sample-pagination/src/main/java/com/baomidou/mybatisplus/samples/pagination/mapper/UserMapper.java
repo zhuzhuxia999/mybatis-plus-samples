@@ -36,6 +36,8 @@ public interface UserMapper extends BaseMapper<User> {
     MyPage<User> mySelectPage(@Param("pg") MyPage<User> myPage, @Param("ps") ParamSome paramSome);
 
 
+
+    //注解中动态拼接SQL
     @ResultMap("userChildrenMap")
     @Select("<script>select u.id,u.name,u.email,u.age,c.id as \"c_id\",c.name as \"c_name\",c.user_id as \"c_user_id\" " +
             "from user u " +

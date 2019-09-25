@@ -50,6 +50,9 @@ public class PaginationTest {
         Assert.assertEquals(3, result.getRecords().size());
     }
 
+
+
+
     @Test
     public void tests1() {
         System.out.println("----- baseMapper 自带分页 ------");
@@ -119,6 +122,7 @@ public class PaginationTest {
         map.put("name", "%a");
         mapper.mySelectMap(map).forEach(System.out::println);
     }
+
 
     @Test
     public void myPage() {
